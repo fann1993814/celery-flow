@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  redis:
+    image: redis:7.2.1-alpine
+    ports:
+      - '6379:6379'
+    volumes:
+      - ./local/redis/config/redis.conf:/config/redis.conf
+      - ./local/redis/data:/data
+
+  woker1:
+    build: ./workers/worker1/
+    command: celery -A tasks worker -Q worker1 --concurrency 4 --loglevel=info --logfile=celery.log
+    volumes:
+      - ./local/workers/worekr1:/app
+    depends_on:
+      - redis
+
+  woker2:
+    build: ./workers/worker2/
+    command: celery -A tasks worker -Q worker2 --concurrency 4 --loglevel=info --logfile=celery.log
+    volumes:
+      - ./local/workers/worekr2:/app
+    depends_on:
+      - redis
+

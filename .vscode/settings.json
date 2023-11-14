@@ -1,0 +1,12 @@
+{
+    "python.analysis.autoFormatStrings": true,
+    "files.trimTrailingWhitespace": true,
+    "files.autoSave": "onFocusChange",
+    "[python]":{
+        "editor.formatOnType": true,
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": true,
+        "editor.tabSize": 4
+    },
+}

@@ -1,7 +1,7 @@
 # Celery-Flow Example
 
 - This Repo apply simple task-queue cases with [Celery](https://docs.celeryq.dev/en/stable/).
-- The Manager is a Restful API Gateway, it is implemented by [FastAPI](https://fastapi.tiangolo.com)
+- The `manager` is a Restful API Gateway, it is implemented by [FastAPI](https://fastapi.tiangolo.com)
 - The Celery Queue Backend use [Redis](https://redis.io).
 
 ## Install
